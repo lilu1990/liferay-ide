@@ -15,6 +15,7 @@
 
 package com.liferay.ide.project.ui.tests;
 
+import com.liferay.ide.ui.tests.swtbot.page.CheckBoxPageObject;
 import com.liferay.ide.ui.tests.swtbot.page.RadioPageObject;
 import com.liferay.ide.ui.tests.swtbot.page.ComboBoxPageObject;
 import com.liferay.ide.ui.tests.swtbot.page.TextPageObject;
@@ -30,13 +31,69 @@ public class CreateLiferayPortletWizardPageObject<T extends SWTBot> extends Wiza
     implements CreateLiferayPortletWizard, ProjectWizard
 {
 
-    ComboBoxPageObject<SWTBot> portletPluginProject;
-    TextPageObject<SWTBot> sourceFolder;
-    RadioPageObject<SWTBot> createNewPortlet;
-    RadioPageObject<SWTBot> useDefaultPortlet;
-    TextPageObject<SWTBot> portletClass;
-    TextPageObject<SWTBot> javaPackage;
-    TextPageObject<SWTBot> superClass;
+    public ComboBoxPageObject<SWTBot> portletPluginProject;
+    public TextPageObject<SWTBot> sourceFolder;
+    public RadioPageObject<SWTBot> createNewPortlet;
+    public RadioPageObject<SWTBot> useDefaultPortlet;
+    public TextPageObject<SWTBot> portletClass;
+    public TextPageObject<SWTBot> javaPackage;
+    public TextPageObject<SWTBot> superClass;
+
+    public TextPageObject<SWTBot> name;
+    public TextPageObject<SWTBot> displayName;
+    public TextPageObject<SWTBot> title;
+
+    public CheckBoxPageObject<SWTBot> view;
+    public CheckBoxPageObject<SWTBot> edit;
+    public CheckBoxPageObject<SWTBot> help;
+    public CheckBoxPageObject<SWTBot> about;
+    public CheckBoxPageObject<SWTBot> config;
+    public CheckBoxPageObject<SWTBot> editDefaults;
+    public CheckBoxPageObject<SWTBot> editGuest;
+    public CheckBoxPageObject<SWTBot> preview;
+    public CheckBoxPageObject<SWTBot> print;
+
+    public CheckBoxPageObject<SWTBot> createJspFiles;
+    public TextPageObject<SWTBot> jspFolder;
+
+    public CheckBoxPageObject<SWTBot> createResourceBundleFile;
+    public TextPageObject<SWTBot> reourceBundleFilePath;
+
+    public TextPageObject<SWTBot> icon;
+    public CheckBoxPageObject<SWTBot> allowMultipleInstances;
+    public TextPageObject<SWTBot> css;
+    public TextPageObject<SWTBot> javaScript;
+    public TextPageObject<SWTBot> cssClassWrapper;
+
+    public ComboBoxPageObject<SWTBot> displayCategory;
+
+    public CheckBoxPageObject<SWTBot> addToControlPanel;
+    public ComboBoxPageObject<SWTBot> entryCategory;
+    public TextPageObject<SWTBot> entryWeight;
+
+    public CheckBoxPageObject<SWTBot> createEntryClass;
+    public TextPageObject<SWTBot> entryClass;
+
+    public CheckBoxPageObject<SWTBot> publicModify;
+    public CheckBoxPageObject<SWTBot> abstractModify;
+    public CheckBoxPageObject<SWTBot> finalModify;
+
+    public CheckBoxPageObject<SWTBot> constrFromSuperClass;
+    public CheckBoxPageObject<SWTBot> inherAbstractMethods;
+
+    public CheckBoxPageObject<SWTBot> init;
+    public CheckBoxPageObject<SWTBot> destory;
+    public CheckBoxPageObject<SWTBot> doView;
+    public CheckBoxPageObject<SWTBot> doEdit;
+    public CheckBoxPageObject<SWTBot> doHelp;
+    public CheckBoxPageObject<SWTBot> doAbout;
+    public CheckBoxPageObject<SWTBot> doConfig;
+    public CheckBoxPageObject<SWTBot> doEditDefaults;
+    public CheckBoxPageObject<SWTBot> doEditGuest;
+    public CheckBoxPageObject<SWTBot> doPreview;
+    public CheckBoxPageObject<SWTBot> doPrint;
+    public CheckBoxPageObject<SWTBot> doProcessAction;
+    public CheckBoxPageObject<SWTBot> doServeResource;
 
     public CreateLiferayPortletWizardPageObject( T bot )
     {

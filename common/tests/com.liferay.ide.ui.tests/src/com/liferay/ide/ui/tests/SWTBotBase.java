@@ -190,9 +190,12 @@ public class SWTBotBase implements UIBase
         assertEquals( "Expected .ivy folder to be here: " + ivyCacheDir.getAbsolutePath(), true, ivyCacheDir.exists() );
     }
 
-    public void openWizard( String wizardName )
+    public static void openWizard( String wizardName )
     {
+        bot.activeView().setFocus();
+        bot.activeShell().setFocus();
 
+        bot.menu( "File" ).click();
         bot.menu( "File" ).menu( "New" ).menu( "Other..." ).click();
 
         textBot.setText( 0, "Liferay" );

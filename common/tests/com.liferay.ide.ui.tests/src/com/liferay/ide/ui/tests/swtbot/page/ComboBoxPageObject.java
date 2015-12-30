@@ -15,12 +15,10 @@
 
 package com.liferay.ide.ui.tests.swtbot.page;
 
-import com.liferay.ide.ui.tests.swtbot.condition.WidgetEnabledCondition;
-
-import org.eclipse.swt.widgets.Widget;
 import org.eclipse.swtbot.swt.finder.SWTBot;
-import org.eclipse.swtbot.swt.finder.widgets.AbstractSWTBot;
 import org.eclipse.swtbot.swt.finder.widgets.SWTBotCombo;
+
+import com.liferay.ide.ui.tests.swtbot.condition.WidgetEnabledCondition;
 
 /**
  * @author Terry Jia
@@ -34,22 +32,39 @@ public class ComboBoxPageObject<T extends SWTBot> extends AbstractWidgetPageObje
     }
 
     @Override
-    protected AbstractSWTBot<?> getWidget()
+    protected SWTBotCombo getWidget()
     {
         return bot.comboBoxWithLabel( label );
     }
 
     public void setSelection( String value )
     {
-        AbstractSWTBot<? extends Widget> widget = getWidget();
 
-        SWTBotCombo swtBotCombo = (SWTBotCombo) widget;
+        SWTBotCombo swtBotCombo = getWidget();
 
         bot.waitUntil( new WidgetEnabledCondition( swtBotCombo, true ) );
 
         swtBotCombo.setSelection( value );
 
         bot.sleep( 1000 );
+
+    }
+
+    public String[] items()
+    {
+        return getWidget().items();
+    }
+
+    public boolean hasItem( String itemName )
+    {
+
+        String[] items = items();
+        for( String item : items )
+        {
+            if( itemName.equals( item ) )
+                return true;
+        }
+        return false;
     }
 
 }
