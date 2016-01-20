@@ -30,6 +30,24 @@ public class ThemeWizardPageObject<T extends SWTBot> extends WizardPageObject<T>
     ComboBoxPageObject<SWTBot> themeFrameworkTypeComboBox;
     ComboBoxPageObject<SWTBot> themeParentTypeComboBox;
 
+    public ThemeWizardPageObject( T bot )
+    {
+        this( bot, 0 );
+    }
+
+    public ThemeWizardPageObject( T bot, int index )
+    {
+        this( bot, TEXT_BLANK, index );
+    }
+
+    public ThemeWizardPageObject( T bot, String title, int index )
+    {
+        super( bot, title, BUTTON_CANCEL, BUTTON_FINISH, BUTTON_BACK, BUTTON_NEXT, index );
+
+        themeParentTypeComboBox = new ComboBoxPageObject<SWTBot>( bot, THEME_PARENT_TYPE );
+        themeFrameworkTypeComboBox = new ComboBoxPageObject<SWTBot>( bot, THEME_FARMEWORK_TYPE );
+    }
+
     public ComboBoxPageObject<SWTBot> getThemeFrameworkTypeComboBox()
     {
         return themeFrameworkTypeComboBox;
@@ -38,24 +56,6 @@ public class ThemeWizardPageObject<T extends SWTBot> extends WizardPageObject<T>
     public ComboBoxPageObject<SWTBot> getThemeParentTypeComboBox()
     {
         return themeParentTypeComboBox;
-    }
-
-    public ThemeWizardPageObject( T bot )
-    {
-        this( bot, 0 );
-    }
-
-    public ThemeWizardPageObject( T bot, int indexThemeValidationMessage )
-    {
-        this( bot, TEXT_BLANK, indexThemeValidationMessage );
-    }
-
-    public ThemeWizardPageObject( T bot, String title, int indexThemeValidationMessage )
-    {
-        super( bot, title, BUTTON_CANCEL, BUTTON_FINISH, BUTTON_BACK, BUTTON_NEXT, indexThemeValidationMessage );
-
-        themeParentTypeComboBox = new ComboBoxPageObject<SWTBot>( bot, THEME_PARENT_TYPE );
-        themeFrameworkTypeComboBox = new ComboBoxPageObject<SWTBot>( bot, THEME_FARMEWORK_TYPE );
     }
 
     public void setParentFramework( String parent, String framework )

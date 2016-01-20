@@ -24,23 +24,19 @@ import org.eclipse.swtbot.swt.finder.widgets.SWTBotTable;
 public class TablePageObject<T extends SWTBot> extends AbstractWidgetPageObject<SWTBot>
 {
 
+    public TablePageObject( SWTBot bot, int index )
+    {
+        super( bot, index );
+    }
+
     public TablePageObject( SWTBot bot, String label )
     {
         super( bot, label );
     }
 
-    public TablePageObject( SWTBot bot, int index )
+    public void click( int row )
     {
-
-        super( bot, index );
-    }
-
-    protected SWTBotTable getWidget()
-    {
-        if( label != null )
-            return bot.tableWithLabel( label, 0 );
-        return bot.table( index );
-
+        getWidget().getTableItem( row ).click();
     }
 
     public void click( int row, int column )
@@ -54,14 +50,14 @@ public class TablePageObject<T extends SWTBot> extends AbstractWidgetPageObject<
 
     }
 
+    public boolean containsItem( String item )
+    {
+        return getWidget().containsItem( item );
+    }
+
     public void doubleClick( int row, int column )
     {
         getWidget().doubleClick( row, column );
-    }
-
-    public void click( int row )
-    {
-        getWidget().getTableItem( row ).click();
     }
 
 /*    public List<String> getAllItems()
@@ -82,9 +78,13 @@ public class TablePageObject<T extends SWTBot> extends AbstractWidgetPageObject<
         return getWidget().getTableItem( row )
     }*/
 
-    public boolean containsItem( String item )
+    protected SWTBotTable getWidget()
     {
-        SWTBotTable table = getWidget();
-        return table.containsItem( item );
+        if( label != null )
+        {
+            return bot.tableWithLabel( label, 0 );
+        }
+
+        return bot.table( index );
     }
 }
