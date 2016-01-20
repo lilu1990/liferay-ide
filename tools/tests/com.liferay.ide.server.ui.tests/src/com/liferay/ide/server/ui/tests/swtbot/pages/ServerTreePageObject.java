@@ -13,9 +13,9 @@
  *
  *******************************************************************************/
 
-package com.liferay.ide.server.core.tests.swtbot.pages;
+package com.liferay.ide.server.ui.tests.swtbot.pages;
 
-import com.liferay.ide.server.core.tests.swtbot.ServerAction;
+import com.liferay.ide.server.ui.tests.swtbot.ServerAction;
 import com.liferay.ide.ui.tests.swtbot.page.ConfirmPageObject;
 import com.liferay.ide.ui.tests.swtbot.page.TreeItemPageObject;
 import com.liferay.ide.ui.tests.swtbot.page.TreePageObject;

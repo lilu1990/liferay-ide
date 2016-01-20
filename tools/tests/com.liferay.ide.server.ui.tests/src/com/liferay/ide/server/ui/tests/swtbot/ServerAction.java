@@ -13,7 +13,7 @@
  *
  *******************************************************************************/
 
-package com.liferay.ide.server.core.tests.swtbot;
+package com.liferay.ide.server.ui.tests.swtbot;
 
 import com.liferay.ide.ui.tests.UIBase;
 
