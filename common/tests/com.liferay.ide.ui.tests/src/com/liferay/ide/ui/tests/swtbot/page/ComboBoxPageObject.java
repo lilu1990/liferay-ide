@@ -15,8 +15,6 @@
 
 package com.liferay.ide.ui.tests.swtbot.page;
 
-import com.liferay.ide.ui.tests.swtbot.condition.WidgetEnabledCondition;
-
 import org.eclipse.swtbot.swt.finder.SWTBot;
 import org.eclipse.swtbot.swt.finder.widgets.SWTBotCombo;
 
@@ -58,11 +56,12 @@ public class ComboBoxPageObject<T extends SWTBot> extends AbstractWidgetPageObje
 
     public void setSelection( String value )
     {
-        SWTBotCombo combo = getWidget();
+        getWidget().setSelection( value );
+    }
 
-        bot.waitUntil( new WidgetEnabledCondition( combo, true ) );
-
-        combo.setSelection( value );
+    public void setText( String text )
+    {
+        getWidget().setText( text );
     }
 
 }
