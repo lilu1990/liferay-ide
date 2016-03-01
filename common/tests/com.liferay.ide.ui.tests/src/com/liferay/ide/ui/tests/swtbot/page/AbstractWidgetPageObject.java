@@ -17,6 +17,7 @@ import org.eclipse.swtbot.swt.finder.widgets.AbstractSWTBot;
 
 /**
  * @author Terry Jia
+ * @author Li Lu
  */
 public abstract class AbstractWidgetPageObject<T extends SWTBot> extends AbstractPageObject<SWTBot>
 {
@@ -63,6 +64,16 @@ public abstract class AbstractWidgetPageObject<T extends SWTBot> extends Abstrac
     public boolean isActive()
     {
         return getWidget().isActive();
+    }
+
+    public boolean isEnabled()
+    {
+        return getWidget().isEnabled();
+    }
+
+    public boolean isVisible()
+    {
+        return getWidget().isVisible();
     }
 
 }

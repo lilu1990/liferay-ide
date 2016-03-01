@@ -49,11 +49,6 @@ public class TextPageObject<T extends SWTBot> extends AbstractWidgetPageObject<S
         return bot.textWithLabel( label );
     }
 
-    public boolean isEnabled()
-    {
-        return getWidget().isEnabled();
-    }
-
     public void setText( String text )
     {
         bot.waitUntil( new WidgetEnabledCondition( getWidget(), true ) );

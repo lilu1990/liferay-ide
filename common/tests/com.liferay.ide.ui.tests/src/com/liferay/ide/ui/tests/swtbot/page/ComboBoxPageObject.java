@@ -23,6 +23,7 @@ import org.eclipse.swtbot.swt.finder.widgets.SWTBotCombo;
 /**
  * @author Terry Jia
  * @author Ashley Yuan
+ * @author Li Lu
  */
 public class ComboBoxPageObject<T extends SWTBot> extends AbstractWidgetPageObject<SWTBot>
 {
@@ -43,9 +44,22 @@ public class ComboBoxPageObject<T extends SWTBot> extends AbstractWidgetPageObje
         return bot.comboBoxWithLabel( label );
     }
 
-    public boolean isEnabled()
+    public boolean hasItem( String itemName )
     {
-        return getWidget().isEnabled();
+        for( String item : items() )
+        {
+            if( itemName.equals( item ) )
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public String[] items()
+    {
+        return getWidget().items();
     }
 
     public void setSelection( String value )
