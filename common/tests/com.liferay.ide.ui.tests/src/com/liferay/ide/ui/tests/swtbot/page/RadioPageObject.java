@@ -31,6 +31,11 @@ public class RadioPageObject<T extends SWTBot> extends AbstractWidgetPageObject<
         super( bot, label );
     }
 
+    public RadioPageObject( SWTBot bot, String label, int index )
+    {
+        super( bot, label, index );
+    }
+
     public void click()
     {
         bot.waitUntil( new WidgetEnabledCondition( getWidget(), true ) );

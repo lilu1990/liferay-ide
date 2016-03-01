@@ -16,6 +16,7 @@
 package com.liferay.ide.ui.tests.swtbot.page;
 
 import org.eclipse.swtbot.swt.finder.SWTBot;
+import org.eclipse.swtbot.swt.finder.exceptions.WidgetNotFoundException;
 import org.eclipse.swtbot.swt.finder.utils.TableCollection;
 import org.eclipse.swtbot.swt.finder.widgets.AbstractSWTBot;
 import org.eclipse.swtbot.swt.finder.widgets.SWTBotTree;
@@ -79,6 +80,26 @@ public class TreePageObject<T extends SWTBot> extends AbstractWidgetPageObject<S
     protected AbstractSWTBot<?> getWidget()
     {
         return bot.tree( index );
+    }
+
+    public boolean hasTreeItem( String... items )
+    {
+        try
+        {
+            SWTBotTreeItem treeItem = getTree().getTreeItem( items[0] );
+
+            for( int i = 1; i < items.length; i++ )
+            {
+
+                treeItem.expand();
+                treeItem = treeItem.getNode( items[i] ).expand();
+            }
+            return true;
+        }
+        catch( WidgetNotFoundException e )
+        {
+            return false;
+        }
     }
 
     public void selectMulty( final String... items )
