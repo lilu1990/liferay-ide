@@ -11,7 +11,6 @@ Require-Bundle: com.liferay.ide.alloy.ui,
  com.liferay.ide.project.core.tests,
  com.liferay.ide.service.core,
  com.liferay.ide.server.core.tests,
- com.liferay.ide.ui.tests,
  com.liferay.ide.xml.search.ui,
  com.liferay.ide.xml.search.ui.tests,
  org.eclipse.core.resources,
@@ -25,7 +24,8 @@ Require-Bundle: com.liferay.ide.alloy.ui,
  org.eclipse.wst.sse.core,
  org.eclipse.wst.sse.ui,
  org.eclipse.wst.xml.ui,
- org.junit
+ org.junit,
+ com.liferay.ide.ui.tests
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Export-Package: com.liferay.ide.alloy.ui.tests
